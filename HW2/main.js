@@ -114,18 +114,32 @@ function fetchAlbumData(artist) {
       } 
   
       // Chiamare la funzione per ottenere e visualizzare gli album per Eminem
-      fetchAlbumData('eminem')
-        .then(albums => buildArtistCards('Eminem', albums))
-        .catch(error => console.error('Errore durante il recupero dei dati di Eminem:', error));
+      // fetchAlbumData('eminem')
+      //   .then(albums => buildArtistCards('Eminem', albums))
+      //   .catch(error => console.error('Errore durante il recupero dei dati di Eminem:', error));
   
-      // Chiamare la funzione per ottenere e visualizzare gli album per Metallica
-      fetchAlbumData('metallica')
-        .then(albums => buildArtistCards('Metallica', albums))
-        .catch(error => console.error('Errore durante il recupero dei dati di Metallica:', error));
+      // // Chiamare la funzione per ottenere e visualizzare gli album per Metallica
+      // fetchAlbumData('metallica')
+      //   .then(albums => buildArtistCards('Metallica', albums))
+      //   .catch(error => console.error('Errore durante il recupero dei dati di Metallica:', error));
   
-      // Chiamare la funzione per ottenere e visualizzare gli album per Queen
-      fetchAlbumData('queen')
-        .then(albums => buildArtistCards('Queen', albums))
-        .catch(error => console.error('Errore durante il recupero dei dati di Queen:', error));
+      // // Chiamare la funzione per ottenere e visualizzare gli album per Queen
+      // fetchAlbumData('queen')
+      //   .then(albums => buildArtistCards('Queen', albums))
+      //   .catch(error => console.error('Errore durante il recupero dei dati di Queen:', error));  
+
+
+//CONTINUO CON LEZIONE D5//
+
+const search = () => {
+  const query = document.getElementById('searchField').value;
+  //console.log('query', query);
+  fetchAlbumData(query)
+  .then(albums => buildArtistCards('song', albums))
+  .catch(error => console.error('Errore durante il recupero dei dati', error));
+
+}
+
+
   
    
