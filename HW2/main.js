@@ -71,7 +71,7 @@ function fetchAlbumData(artist) {
         for (const album of albums) {
           const albumTitle = album.album.title;
           const albumCover = album.album.cover;
-          const artistName = artist;
+          const artistName = album.artist.name;
           const songTitle = album.title;
   
           // Costruiamo il contenuto della card utilizzando le classi di Bootstrap
@@ -134,9 +134,11 @@ function fetchAlbumData(artist) {
 const search = () => {
   const query = document.getElementById('searchField').value;
   //console.log('query', query);
+  //const songTitle = album.title;
   fetchAlbumData(query)
   .then(albums => buildArtistCards('song', albums))
   .catch(error => console.error('Errore durante il recupero dei dati', error));
+  document.getElementById('titolo').innerText = query;
 
 }
 
